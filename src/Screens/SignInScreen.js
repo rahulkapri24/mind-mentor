@@ -5,14 +5,14 @@ import { auth } from "../firebase";
 function SignInScreen() {
   const emailRef = useRef(null);
   const passRef = useRef(null);
-  const nameRef = useRef(null);
+//  const nameRef = useRef(null);
 
   const register = (e) => {
     e.preventDefault();
     auth.createUserWithEmailAndPassword(
       emailRef.current.value,
         passRef.current.value,
-         nameRef.current.value
+        // nameRef.current.value
     )
       // .createUserWithEmailAndPassword(
       //   emailRef.current.value,
