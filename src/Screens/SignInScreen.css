@@ -1,0 +1,85 @@
+
+.SignIn{
+    max-width: 400px;
+    padding: 70px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    margin-left:auto ;
+    margin-right: auto;
+    margin-top: -200px;
+    background: rgba(255, 255, 255, 0.85);
+   background-size: cover;
+
+}
+.SignIn >form > h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.SignIn >form{
+    display: grid;
+    flex-direction:column ;
+
+}
+.SignIn > form >input{
+    outline-width: 0;
+    height: 40px;
+    margin-bottom: 16px;
+}
+.SignIn >form > button{
+    padding: 16px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #e50914;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-left: 90px;
+    margin-top: 20px;
+}
+.SignIn >form >h4{
+    text-align: left;
+    margin-top: -20px;
+    padding: 25px;
+}
+.signIn_gray{
+    color: gray;
+    
+}
+.signIn_link{
+    text-align: center;
+    padding-left: 60px;
+    text-decoration: none;
+    color: gray;
+}
+.signIn_link:hover{
+cursor: pointer;
+color: black;
+
+}
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+    display:flex;
+    flex: 1;
+    padding: 0;
+    box-sizing:content-box;
+    margin-top:10px;
+    cursor: pointer;
+    
+}
+
+
+.google >span{
+    display: flex;
+    padding: 20px;
+    cursor: pointer;
+    font-size: small;
+    margin-top: -90px;
+    margin-left: 90px;
+    margin-bottom: 0px;
+}
+.google>span:hover{
+    color: blue;
+}
