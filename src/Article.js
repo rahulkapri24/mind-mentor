@@ -1,4 +1,4 @@
-import React ,{useState}from "react";
+import React ,{useState ,useEffect}from "react";
 import YouTube, { YouTubeProps } from "react-youtube";
 import "./Article.css";
 import Card from "react-bootstrap/Card";
@@ -27,15 +27,35 @@ function Article() {
   //   }
    
   // }
-  const opts: YouTubeProps["opts"] = {
-    height: "390",
-    width: "700",
-    
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 0,
-    },
+  const [windowWidth, setWindowWidth] = useState(600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const getYouTubeOpts = (): YouTubeProps["opts"] => {
+    const aspectRatio = 16 / 9;
+    const maxWidth = windowWidth - 40; // Adjust the value as per your layout
+    const height = Math.round(maxWidth / aspectRatio);
+    const width = Math.round(maxWidth);
+
+    return {
+      height: height.toString(),
+      width: width.toString(),
+      playerVars: {
+        autoplay: 0,
+      },
+    };
   };
+
   
   return (
     <>
@@ -46,9 +66,7 @@ function Article() {
         <YouTube
              
               videoId="rkZl2gsLUp4"
-              opts={opts}
-             
-            />
+              opts={getYouTubeOpts()} />
         <Card.Text>
          When we deny our emotion, it owns us. When we own our emotion, we can rebuild and find our way through the pain. 
         </Card.Text>
