@@ -29,7 +29,7 @@
    
    
 } .banner_body > h1 {
-    font-size: 48px;
+    font-size: 100vh;
     padding: 10px;
    font-weight: 600;
     margin: auto;
